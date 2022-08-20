@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DRF_SECRET_KEY', default='foo')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', default=0)
 
-ALLOWED_HOSTS = ["simple-bookstore-test.herokuapp.com"]
+ALLOWED_HOSTS = ["simple-bookstore-test.herokuapp.com", "127.0.0.1"]
 
 
 CORS_ALLOW_CREDENTIALS = True
