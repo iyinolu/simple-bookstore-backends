@@ -25,9 +25,14 @@ SECRET_KEY = os.environ.get('DRF_SECRET_KEY', default='foo')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', default=0)
 
-ALLOWED_HOSTS = ["simple-bookstore-test.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "simple-bookstore-test.herokuapp.com", 
+    "127.0.0.1", 
+    "http://localhost:8080/", 
+    "https://iyinolu.github.io/simple-bookstore-frontend-vue/"
+]
 
-
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
@@ -40,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'api'
 ]
 
@@ -52,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'bookstore.urls'

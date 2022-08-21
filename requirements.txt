@@ -12,3 +12,4 @@ gunicorn==19.7.1
 Markdown==2.6.9
 Pillow==2.3.0
 django-filter==1.0.4
+django-cors-headers==3.13.0
